@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Login Form</h1>
+	<form id="login-form">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required><br><br>
+		<input type="submit" value="Login">
+	</form>
+	<p id="message"></p>
+
+	<script>
+		// Get the login form
+		const form = document.getElementById("login-form");
+
+		// Add a listener for the form submission
+		form.addEventListener("submit", function(event) {
+			// Prevent the default form submission
+			event.preventDefault();
+
+			// Get the username and password from the form
+			const username = form.username.value;
+			const password = form.password.value;
+
+			// Send a POST request to the server to check the username and password
+			const xhr = new XMLHttpRequest();
+			xhr.open("POST", "/login");
+			xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+			xhr.onload = function() {
+				// Parse the JSON response from the server
+				const response = JSON.parse(xhr.responseText);
+
+				if (xhr.status === 200) {
+					// If the login was successful, display a message and redirect to the dashboard page
+					document.getElementById("message").innerHTML = response.message;
+					window.location.href = "/dashboard";
+				} else {
+					// If the login was unsuccessful, display an error message
+					document.getElementById("message").innerHTML = response.error;
+				}
+			};
+			xhr.send(JSON.stringify({ username: username, password: password }));
+		});
+	</script>
+</body>
+</html>
