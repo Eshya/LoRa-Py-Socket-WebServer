@@ -1,0 +1,11 @@
+[Unit]
+Description=HTTP Server
+After=network.target
+
+[Service]
+ExecStart=/home/pi/.nvm/versions/node/v19.7.0/bin/http-server /home/pi/Final_Project_faldo/IOT_Faldo -p 9999
+WorkingDirectory=/home/pi/Final_Project_faldo/IOT_Faldo
+User=pi
+
+[Install]
+WantedBy=multi-user.target

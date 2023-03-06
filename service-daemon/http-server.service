@@ -1,0 +1,13 @@
+[Unit]
+Description=HTTP Server
+After=network.target
+
+[Service]
+ExecStart=/home/pi/.nvm/versions/node/v19.7.0/bin/http-server /home/pi/WEB_FE -p 8888
+WorkingDirectory=/home/pi/WEB_FE
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+
