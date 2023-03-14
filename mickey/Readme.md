@@ -10,6 +10,6 @@ Kelas Mickey menggunakan tipe data uint8_t dan uint32_t dari pustaka stdint.h. A
 masuk ke directory code lewat terminal, kemudian jalankan command ini.
 
 
-`g++ -o program example.cpp`
+`g++ -o program main.cpp`
 
 `./program`
