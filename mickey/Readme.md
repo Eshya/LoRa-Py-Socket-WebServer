@@ -13,3 +13,6 @@ masuk ke directory code lewat terminal, kemudian jalankan command ini.
 `g++ -o program main.cpp`
 
 `./program`
+
+
+call cpp with python [Eshya Pywrap](https://github.com/Eshya/pywrap_example)
