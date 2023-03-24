@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 cors = CORS(app, resource={
     r"/*":{
@@ -33,5 +33,5 @@ def login():
 
     return jsonify({'message': 'Login successful'}), 200
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True,port=5000, host='0.0.0.0')
