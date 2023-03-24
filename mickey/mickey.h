@@ -1,3 +1,5 @@
+// This code is made by eshya
+
 #include <stdint.h>
 
 #define MICKEY_IV_SIZE 10
