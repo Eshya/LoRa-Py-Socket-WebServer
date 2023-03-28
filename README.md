@@ -17,5 +17,3 @@
 - pySX127x/LoRates-mqtt/py : code receiver lora
 - Login-Authorize : Simple Backend untuk login system ke web server
 - IOT_Faldo : directory static Web Server
-
-https://circuitdigest.com/microcontroller-projects/understanding-ecg-sensor-and-program-ad8232-ecg-sensor-with-arduino-to-diagnose-various-medical-conditions
